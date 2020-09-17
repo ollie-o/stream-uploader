@@ -1,6 +1,6 @@
 const qs = require("query-string");
 
-const { execPromise } = require("../../helpers/execPromise");
+const execPromise = require("../execPromise");
 
 const VIEWER_URL = "https://ollie-o.com/stream-viewer";
 

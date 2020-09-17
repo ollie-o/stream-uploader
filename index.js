@@ -3,6 +3,7 @@ const uuid = require("uuid").v4;
 
 const getS3Buckets = require("./helpers/getS3Buckets");
 const isTsFile = require("./helpers/isTsFile");
+const isM3u8File = require("./helpers/isM3u8File");
 
 const FileUploader = require("./helpers/FileUploader");
 const M3u8FileUploader = require("./helpers/M3u8FileUploader");
@@ -24,7 +25,7 @@ const main = () => {
 
     if (isTsFile(name)) {
       tsFileUploader.upload(name);
-    } else {
+    } else if (isM3u8File(name)) {
       m3u8FileUploader.upload(name);
     }
   });
